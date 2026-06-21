@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC News – Unos vijesti</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="bbc-logo">BBC</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kategorija.php?id=news">News</a></li>
+                <li><a href="kategorija.php?id=sport">Sport</a></li>
+                <li><a href="unos.html">Unos</a></li>
+                <li><a href="administrator.php">Administracija</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ŽUTA TRAKA -->
+<div class="category-bar">
+    <h2>UNOS VIJESTI</h2>
+</div>
+
+<!-- FORMA -->
+<main>
+    <div class="form-container">
+
+        <form 
+            name="unosvijesti" 
+            action="skripta.php" 
+            method="POST" 
+            enctype="multipart/form-data"
+        >
+
+            <!-- NASLOV -->
+            <div class="form-item">
+                <label for="title">Naslov vijesti:</label>
+                <div class="form-field">
+                    <input 
+                        type="text" 
+                        name="title" 
+                        id="title" 
+                        class="form-field-textual"
+                        autofocus
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- KRATKI SAŽETAK -->
+            <div class="form-item">
+                <label for="about">Kratki sažetak vijesti (do 200 znakova):</label>
+                <div class="form-field">
+                    <textarea 
+                        name="about" 
+                        id="about" 
+                        cols="30" 
+                        rows="4" 
+                        class="form-field-textual"
+                        required
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- TEKST VIJESTI -->
+            <div class="form-item">
+                <label for="content">Sadržaj vijesti:</label>
+                <div class="form-field">
+                    <textarea 
+                        name="content" 
+                        id="content" 
+                        cols="30" 
+                        rows="10" 
+                        class="form-field-textual"
+                        required
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- SLIKA -->
+            <div class="form-item">
+                <label for="pphoto">Slika:</label>
+                <div class="form-field">
+                    <input 
+                        type="file" 
+                        name="pphoto" 
+                        id="pphoto"
+                        accept="image/jpg, image/jpeg, image/gif, image/png"
+                    >
+                </div>
+            </div>
+
+            <!-- KATEGORIJA -->
+            <div class="form-item">
+                <label for="category">Kategorija vijesti:</label>
+                <div class="form-field">
+                    <select 
+                        name="category" 
+                        id="category" 
+                        class="form-field-textual"
+                    >
+                        <option value="news">News</option>
+                        <option value="sport">Sport</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ARHIVA CHECKBOX -->
+            <div class="form-item">
+                <label>
+                    Spremiti u arhivu (neće se prikazivati na stranici):
+                    <div class="form-field">
+                        <input 
+                            type="checkbox" 
+                            name="archive" 
+                            id="archive"
+                        > Da, arhiviraj
+                    </div>
+                </label>
+            </div>
+
+            <!-- GUMBI -->
+            <div class="form-item">
+                <button type="reset" value="Poništi">Poništi</button>
+                <button type="submit" value="Prihvati">Prihvati</button>
+            </div>
+
+        </form>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        <strong>Copyright &copy; 2019 BBC.</strong> 
+        The BBC is not responsible for the content of external sites. 
+        <a href="#">Read about our approach to external linking.</a>
+    </p>
+    <p>Marija Kučinić | mkucinic@tvz.hr | 2026.</p>
+</footer>
+
+</body>
+</html>
